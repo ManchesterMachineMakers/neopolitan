@@ -1,7 +1,8 @@
 param(
     [string] $APKFile,
     [string] $ADBPath,
-    [switch] $Force
+    [switch] $Force,
+    [switch] $Reboot
 )
 
 $APKFile = if ($APKFile) { $APKFile } else { "TeamCode.apk" }
@@ -22,3 +23,8 @@ Write-Output "Uninstalling previous version"
 
 Write-Output "Installing new version"
 & $ADBPath install $APKFile
+
+if ($Reboot -eq $true) {
+    Write-Output "Rebooting"
+    & $ADBPath reboot
+}
