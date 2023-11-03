@@ -15,7 +15,7 @@ Write-Output "Initializing ADB"
 
 if (-not [System.IO.File]::Exists($APKFile) -or $Force -eq $true) {
     Write-Output "Downloading latest release"
-    Invoke-WebRequest "https://github.com/ManchesterMachineMakers/RobotController/releases/download/latest/TeamCode-release-fullRobot.apk" -OutFile $APKFile
+    Invoke-WebRequest "https://github.com/ManchesterMachineMakers/RobotController/releases/download/latest/TeamCode-release-.apk" -OutFile $APKFile
 }
 
 Write-Output "Uninstalling previous version"
